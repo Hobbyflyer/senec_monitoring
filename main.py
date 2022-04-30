@@ -118,12 +118,14 @@ if numModules>=2:
   
 writeValue("")
 if numModules>=3:
-  alarm=alarm or Modulehandling("C",data["BMS"]['CELL_TEMPERATURES_MODULE_C'],data["BMS"]['CELL_VOLTAGES_MODULE_C'])
-
+  result=Modulehandling("C",data["BMS"]['CELL_TEMPERATURES_MODULE_C'],data["BMS"]['CELL_VOLTAGES_MODULE_C'])
+  alarm=alarm or result
+  
 writeValue("")
 if numModules>=4:
-  alarm=alarm or Modulehandling("D",data["BMS"]['CELL_TEMPERATURES_MODULE_D'],data["BMS"]['CELL_VOLTAGES_MODULE_D'])
-
+  result=Modulehandling("D",data["BMS"]['CELL_TEMPERATURES_MODULE_D'],data["BMS"]['CELL_VOLTAGES_MODULE_D'])
+  alarm=alarm or result
+  
 if config['mail_enabled']:
   if alarm:
     print("sending mail...") 
