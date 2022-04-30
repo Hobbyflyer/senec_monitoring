@@ -1,0 +1,13 @@
+{
+    "senec_ip"      :"192.168.1.9",
+    "consoleout"    : true,
+    "outputfile"    : "output.txt",
+    "temp_alarm_treshhold": 20,
+    "mail_enabled"  : true,
+    "mail_from"     : "sender@online.de",
+    "mail_password" : "password",
+    "mail_to"       : "receiver@gmail.com",
+    "mail_subject"  : "Senec Alarm",
+    "mail_server"   : "smtp.1und1.de",
+    "mail_port"     : 587
+}
