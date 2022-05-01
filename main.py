@@ -110,21 +110,35 @@ numModules=int (data["FACTORY"]['DESIGN_CAPACITY']) / 2500
 if numModules>=1:
   result=Modulehandling("A",data["BMS"]['CELL_TEMPERATURES_MODULE_A'],data["BMS"]['CELL_VOLTAGES_MODULE_A'])
   alarm=alarm or result
+  mincell=min(data["BMS"]['CELL_VOLTAGES_MODULE_A'])
+  maxcell=max(data["BMS"]['CELL_VOLTAGES_MODULE_A'])
+  writeValue("  Zellabweichung             : {0} mV".format(maxcell-mincell))
 
 writeValue("")
 if numModules>=2:
   result=Modulehandling("B",data["BMS"]['CELL_TEMPERATURES_MODULE_B'],data["BMS"]['CELL_VOLTAGES_MODULE_B'])
   alarm=alarm or result
-  
+  mincell=min(data["BMS"]['CELL_VOLTAGES_MODULE_B'])
+  maxcell=max(data["BMS"]['CELL_VOLTAGES_MODULE_B'])
+  writeValue("  Zellabweichung             : {0} mV".format(maxcell-mincell))
+
 writeValue("")
 if numModules>=3:
   result=Modulehandling("C",data["BMS"]['CELL_TEMPERATURES_MODULE_C'],data["BMS"]['CELL_VOLTAGES_MODULE_C'])
   alarm=alarm or result
+  mincell=min(data["BMS"]['CELL_VOLTAGES_MODULE_C'])
+  maxcell=max(data["BMS"]['CELL_VOLTAGES_MODULE_C'])
+  writeValue("  Zellabweichung             : {0} mV".format(maxcell-mincell))
+
   
 writeValue("")
 if numModules>=4:
   result=Modulehandling("D",data["BMS"]['CELL_TEMPERATURES_MODULE_D'],data["BMS"]['CELL_VOLTAGES_MODULE_D'])
   alarm=alarm or result
+  mincell=min(data["BMS"]['CELL_VOLTAGES_MODULE_D'])
+  maxcell=max(data["BMS"]['CELL_VOLTAGES_MODULE_D'])
+  writeValue("  Zellabweichung             : {0} mV".format(maxcell-mincell))
+
   
 if config['mail_enabled']:
   if alarm:
