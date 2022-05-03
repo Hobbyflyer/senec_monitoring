@@ -3,6 +3,13 @@ import sys
 import smtplib
 import os
 
+__author__ = "Thorsten Boettcher"
+__credits__ = ["Thorsten Böttcher, Nicolas Inden", "Mikołaj Chwalisz"]
+__license__ = "Apache-2.0 License"
+__version__ = "1.0.0"
+__maintainer__ = "Nicolas Inden"
+__status__ = "Production"
+
 from senec import Senec
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
